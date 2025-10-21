@@ -21,9 +21,11 @@
     "paths": {
       "@/*": [
         "./*"
-      ]
+      ],
     },
     "allowImportingTsExtensions": true,
-    "noEmit": true
-  }
-}
+    "noEmit": true,
+  },
+}  "include": ["app"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+  

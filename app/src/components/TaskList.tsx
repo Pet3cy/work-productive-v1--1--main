@@ -1,6 +1,7 @@
 import React from 'react';
 import { Project, Task } from '../types';
 import AddTaskForm from './AddTaskForm';
+import { sanitize } from '../utils';
 
 interface TaskListProps {
   project: Project;
@@ -17,7 +18,7 @@ const TaskList: React.FC<TaskListProps> = ({
 }) => {
   return (
     <div>
-      <h2>{project.name} - Tasks</h2>
+      <h2>{sanitize(project.name)} - Tasks</h2>
       <AddTaskForm onAddTask={onAddTask} />
       <ul className="list-group">
         {project.tasks.map(task => (
@@ -37,7 +38,7 @@ const TaskList: React.FC<TaskListProps> = ({
                   }`}
                   htmlFor={`task-${task.id}`}
                 >
-                  {task.name}
+                  {sanitize(task.name)}
                 </label>
               </div>
               <button

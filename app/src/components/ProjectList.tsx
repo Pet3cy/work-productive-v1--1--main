@@ -1,5 +1,6 @@
 import React from 'react';
 import { Project } from '../types';
+import { sanitize } from '../utils';
 
 interface ProjectListProps {
   projects: Project[];
@@ -25,7 +26,7 @@ const ProjectList: React.FC<ProjectListProps> = ({
           onClick={() => onSelectProject(project)}
           style={{ cursor: 'pointer' }}
         >
-          {project.name}
+          {sanitize(project.name)}
           <button
             className="btn btn-danger btn-sm"
             onClick={(e) => {

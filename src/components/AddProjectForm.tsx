@@ -29,7 +29,6 @@ const AddProjectForm: React.FC<AddProjectFormProps> = ({ onAddProject }) => {
     </form>
   );
 };
-export default AddProjectForm;7
+export default AddProjectForm;
 
 docker compose up -d
-
